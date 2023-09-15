@@ -21,6 +21,8 @@ def confirmation(request):
         print(e)
         return render(request, 'bookings/booking.html',)
 
+#had bug help
+
 def make_reservation(request):
     current_datetime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     max_datetime = (datetime.datetime.now() + datetime.timedelta(days=30)).strftime('%Y-%m-%d %H:%M:%S')
