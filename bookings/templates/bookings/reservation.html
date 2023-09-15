@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations</title>
+</head>
+<body>
+    <h1>Current Reservations</h1>
+    <ul>
+        {% for reservation in reservations %}
+            <li>
+                <strong>Name: </strong> {{ reservation.name }} <br>
+                <strong>Date and Time: </strong> {{ reservation.datetime_string}} <br>
+                <strong>Guests: </strong> {{reservation.guests}} <br>
+            </li>
+        {% empty %}
+            <p>No reservations yet.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

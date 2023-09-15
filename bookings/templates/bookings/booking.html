@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+</head>
+<body>
+    <h1>Reservation</h1>
+    <form action="{% url 'make_reservation' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="datetime">Select Date and Time:</label>
+        <input type="datetime-local" id="datetime" name="datetime" required min="{{ current_datetime }}" max="{{ max_datetime }}"><br><br>
+
+        <label for="guests">Number of Guests (Maximum 50):</label>
+        <input type="number" id="guests" name="guests" min="1" max="50" required><br><br>
+
+        <input type="submit" value="Make Reservation 🍽️">
+    </form>
+</body>
+</html>
